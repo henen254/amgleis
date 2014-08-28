@@ -1,5 +1,7 @@
-<?
+Test
+
+<?php
 
 echo(phpinfo());
 
-?
+?>
