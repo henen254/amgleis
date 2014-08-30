@@ -10,7 +10,8 @@ frameborder="0" allowfullscreen></iframe>
 
 player = document.getElementById("ytplayer");
 </script>
-
+<a href="javascript:player.playVideo()">Play</a>
+<a href="javascript:player.pauseVideo()">Play</a>
 <p><form>
 <button type="butonplay" onclick="player.playVideo();">Start</button>
 <button type="buttonpause" onclick="player.pauseVideo();">Pause</button>
