@@ -20,7 +20,9 @@ swfobject.embedSWF("http://www.youtube.com/v/3u8Tbzj37cc?enablejsapi=1&playerapi
   </script>
 <script type="text/javascript">
 
-player = document.getElementById("ytplayer");
+function onYouTubePlayerReady(playerId) {
+player = document.getElementById("myytplayer");
+}
 </script>
 <a href="javascript:player.playVideo()">Play</a>
 <a href="javascript:player.pauseVideo()">Play</a>
