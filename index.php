@@ -15,7 +15,7 @@ You need Flash player 8+ and JavaScript enabled to view this video.
 
 var params = { allowScriptAccess: "always" };
 var atts = { id: "myytplayer" };
-swfobject.embedSWF("http://www.youtube.com/v/VIDEO_ID?enablejsapi=1&playerapiid=ytplayer&version=3","ytapiplayer", "425", "356", "8", null, null, params, atts);
+swfobject.embedSWF("http://www.youtube.com/v/3u8Tbzj37cc?enablejsapi=1&playerapiid=ytplayer&version=3","ytapiplayer", "425", "356", "8", null, null, params, atts);
 
   </script>
 <script type="text/javascript">
