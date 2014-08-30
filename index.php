@@ -2,10 +2,22 @@
 <head>
 </head>
 <body>
-<p><iframe id="ytplayer" type="text/html" width="640" height="360"
+<!--<p><iframe id="ytplayer" type="text/html" width="640" height="360"
 src="https://www.youtube.com/embed/3u8Tbzj37cc?version=3&enablejsapi=1"
 frameborder="0" allowfullscreen></iframe>
+-->
+<script type="text/javascript" src="swfobject.js"></script>    
+  <div id="ytapiplayer">
+You need Flash player 8+ and JavaScript enabled to view this video.
+  </div>
 
+  <script type="text/javascript">
+
+var params = { allowScriptAccess: "always" };
+var atts = { id: "myytplayer" };
+swfobject.embedSWF("http://www.youtube.com/v/VIDEO_ID?enablejsapi=1&playerapiid=ytplayer&version=3","ytapiplayer", "425", "356", "8", null, null, params, atts);
+
+  </script>
 <script type="text/javascript">
 
 player = document.getElementById("ytplayer");
