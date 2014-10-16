@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta charset="UTF-8">
 </head>
 <body>
 <!--<p><iframe id="ytplayer" type="text/html" width="640" height="360"
@@ -33,51 +34,48 @@ function onytplayerStateChange(newState) {
 		nextMsg();
 	}
 }
-var countDown = [1, 2, 3];
+function countdown() {
+
+	
+	if (countdownmsg.length == 0) {
+		playvid();
+		nextMsg();
+	} else {
+		$('#message').html(countdownmsg.pop()).fadeIn(400).delay(1000).fadeOut(400, countdown);
+		
+	}
+
+};
 function nextMsg() {
 	if (messages.length == 10) {
 		playvid();
 	};
+	
 	if (messages.length == 0) {
 		// once there is no more message, do whatever you want
 	} else {
-		// change content of message, fade in, wait, fade out and continue with next message
-		$('#message').html(messages.pop()).fadeIn(400).delay(delayTime.pop()).fadeOut(400, nextMsg);
+
+		$('#message').hide().delay(15000).html(messages.pop()).fadeIn(400).delay(10000).fadeOut(400, nextMsg);
 	}
+
 };
 // list of messages to display
 
-var messages = [
+var countdownmsg = [
 	"3",
 	"2",
 	"1",
-	"",
-	"Hello!",
-	"",
-	"This is a website!",
-	"",
+	].reverse();
+
+var messages = [
+	"Här konstruerades och byggdes världens första tickande ägg.",
+	"Sedan begynnelsen en knutpunkt för vägkommunikation. Idag möts A3, A6, A9 och A73 i staden",
 	"I staden finns kjesarens borg med både torn och kapell men bara ett berg utan något i",
-	"",
-	"Are you ready?",
-	"",
+	"Bayerns tvåa, frankens etta",
 	"I staden ställdes politiska och militära ledare inför rätta efter andra världskriget"
 ].reverse();
 
-var delayTime = [
-	400,
-	400,
-	400,
-	10000,
-	28000,
-	10000,
-	28000,
-	10000,
-	28000,
-	10000,
-	28000,
-	10000,
-	28000
-].reverse();
+
 var i = 0;
 /* var delayTime=[];
 delayTime[0]=exitTime[0]*1000-1000;
@@ -113,7 +111,7 @@ $(document).ready(function () {
 
 	video.oncanplay = function () {
 
-		nextMsg();
+		countdown();
 	};
 
 });
@@ -156,14 +154,20 @@ img{
 
 div.hint{
    position:absolute;
-   top:540px;
-   left:50px;
+   top:290px;
+   left:75px;
 	text-align: center;
-	font-size: 30px;
-   width: 420px;
+font-size: 30px;
+font-color: black;
+   width: 590px;
    padding: 5px;
    border: 5px;
    margin: 0px;
+   background: rgba(255,255,255,0.7);
+}
+
+div:empty {
+   display: none;
 }
 
 div.guess{
@@ -199,7 +203,7 @@ border: 5px solid white;
 }
 </style>
 <video id="Video1" >
-  <source src="mov.webm" type="video/webm" >
+  <source src="skåp.webm" type="video/webm" >
   Your browser does not support HTML5 video.
 </video>
 <a href="javascript:pausevid()"><img src="brake.jpg"></a>
